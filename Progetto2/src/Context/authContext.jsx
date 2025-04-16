@@ -39,11 +39,16 @@ export default function AuthProvider({ children }) {
       setError("credenziali errate");
       return { esito: false, messaggio: "credenziali errate" };
     }
+    
 
     // Se l'utente esiste, lo salviamo nello stato e anche nel localStorage per tenerlo "loggato"
     setUser(userExist);
     setError(null);
     localStorage.setItem("user", JSON.stringify(userExist));
+  }
+  function validate(password) {
+    const pattern = /^(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/;
+    return pattern.test(password);
   }
 
   // Funzione per registrare un nuovo utente
@@ -55,6 +60,12 @@ export default function AuthProvider({ children }) {
     if (userExist) {
       setError("email già registrata");
       return { esito: false, messaggio: "Email già registrata" };
+    }
+    if (!validate(userData.password)) {
+      setError(
+        "La password deve contenere almeno 8 caretteri, una lettera maiuscola, un carattere speciale ed alemno un numero."
+      );
+      return;
     }
 
     // Altrimenti, aggiungiamo il nuovo utente alla lista
@@ -72,7 +83,7 @@ export default function AuthProvider({ children }) {
   // Qui forniamo tutti i dati e le funzioni utili a chiunque userà useAuth() nella propria componente
   return (
     <AuthContext.Provider
-      value={{ user, users, login, registrazione, logout, error }}
+      value={{ user, users, login, registrazione, logout, error, validate }}
     >
       {children}
     </AuthContext.Provider>

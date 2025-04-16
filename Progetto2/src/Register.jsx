@@ -7,13 +7,12 @@ export default function Registrazione() {
   const [user, setUser] = useState({
     nome: "",
     cognome: "",
-    tel: "",
     email: "",
     password: "",
   });
 
   // Prendiamo la funzione di registrazione dal nostro context (quello creato in AuthProvider)
-  const { registrazione, error } = useAuth();
+  const { registrazione, error, validate } = useAuth();
   const navigate = useNavigate();
 
   // Questa funzione si attiva ogni volta che l’utente scrive qualcosa in un input
@@ -24,10 +23,16 @@ export default function Registrazione() {
 
   // Questa è la funzione che si attiverà al submit del form
   function handleSubmit(event) {
-    event.preventDefault(); // Impedisce il comportamento di default del form (evita il refresh della pagina)
-    registrazione(user); // Chiama la funzione 'registrazione' passando i dati dell'utente
-    if (!error) {
-      navigate("/login");
+    event.preventDefault();
+    const validationError = validate(user);
+    if (validationError) {
+      return alert(validationError);
+    } // Impedisce il comportamento di default del form (evita il refresh della pagina)
+    const valida = registrazione(user);
+
+    // Chiama la funzione 'registrazione' passando i dati dell'utente 
+  if (valida) {
+     navigate("/login");
     }
   }
 

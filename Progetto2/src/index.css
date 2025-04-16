@@ -161,7 +161,6 @@
 /*Start Form Register Style*/
 .form-container-register {
   width: 350px;
-  height: 600px;
   background-color: #fff;
   box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
   border-radius: 10px;
@@ -173,7 +172,6 @@
 /*Start Form Login Style*/
 .form-container {
   width: 350px;
-  height: 500px;
   background-color: #fff;
   box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
   border-radius: 10px;
@@ -859,13 +857,14 @@ footer {
 .card {
   min-width: 150px;
   min-height: 450px;
+  max-width: 300px;
   flex: 0 0 calc(25%); /* Ogni card occupa un terzo dello spazio con margini */
   margin-bottom: 20px;
   font-size: 25px;
   background-color: #fff;
   border: 1px solid #ddd;
-  border-radius: 10px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 12px;
+  box-shadow: 0px 0px 8px 8px rgba(0, 0, 0, 0.1);
   text-align: center;
   padding: 10px;
   display: flex;
