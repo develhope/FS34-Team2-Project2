@@ -95,7 +95,7 @@ export default function NavBar() {
             </div>
           </div>
           <div className="accedi-container">
-            <a href="/login">
+            <a href="/choose">
               <svg
                 className="accedi"
                 fill="#ffffff"

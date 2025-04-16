@@ -1,10 +1,326 @@
+/*Start Choose Form*/
+.login-card {
+  width: 250px;
+  height: 270px;
+  background-color: #f2f2f2;
+  border-radius: 25px;
+  box-shadow: 2px 2px 15px rgb(193, 193, 193);
+}
+
+.instruction-text {
+  color: rgb(150, 150, 150);
+  text-align: center;
+  font-size: 12px;
+  margin-top: 10px;
+  margin-bottom: px;
+}
+
+.login-card button {
+  cursor: pointer;
+}
+
+.normal-signin {
+  padding: 10px;
+  font-size: 17px;
+  width: 70%;
+  margin-top: 25px;
+  margin-left: 37px;
+  border: 2px solid transparent;
+  border-radius: 5em;
+  background-color: #1b77da;
+  color: #f2f2f2;
+  font-weight: bold;
+  font-family: sans-serif;
+  transition: 0.2s;
+}
+
+.normal-signin:hover {
+  background-color: transparent;
+  color: #1b77da;
+  border: 2px solid #1b77da;
+}
+
+.create-account {
+  padding: 10px;
+  font-size: 17px;
+  width: 70%;
+  margin-top: 5px;
+  margin-left: 37px;
+  margin-bottom: 5px;
+  border: 2px solid transparent;
+  border-radius: 5em;
+  background-color: #e8e8e8;
+  color: #1b77da;
+  font-weight: bold;
+  font-family: sans-serif;
+  transition: 0.2s;
+}
+
+.create-account:hover {
+  background-color: transparent;
+  color: #1b77da;
+  border: 2px solid #1b77da;
+}
+
+.alternate-login {
+  margin-left: 42px;
+  margin-top: 5px;
+  background-color: #f2f2f2;
+  border-radius: 5em;
+}
+
+.m-sign {
+  padding: 7px;
+  font-size: 14px;
+  height: 40px;
+  width: 40px;
+  border-radius: 5em;
+  margin-top: 5px;
+  background-color: #7fba00;
+  border: 2px solid transparent;
+  transition: 0.2s;
+}
+
+.m-sign svg {
+  width: 27px;
+  height: 27px;
+  margin-top: -2px;
+  margin-left: -2px;
+  fill: #f2f2f2;
+}
+
+.m-sign:hover {
+  background-color: transparent;
+  border: 2px solid #7fba00;
+}
+
+.m-sign:hover svg {
+  fill: #7fba00;
+}
+
+.g-sign {
+  padding: 7px;
+  font-size: 14px;
+  height: 40px;
+  width: 40px;
+  border-radius: 5em;
+  margin-top: 5px;
+  margin-left: 15px;
+  background-color: #db4437;
+  border: 2px solid transparent;
+  transition: 0.2s;
+}
+
+.g-sign svg {
+  width: 23px;
+  height: 25px;
+  margin-top: -1.5px;
+  fill: #f2f2f2;
+}
+
+.g-sign:hover {
+  background-color: transparent;
+  border: 2px solid #db4437;
+}
+
+.g-sign:hover svg {
+  fill: #db4437;
+}
+
+.a-sign {
+  padding: 7px;
+  font-size: 14px;
+  height: 40px;
+  width: 40px;
+  border-radius: 5em;
+  margin-top: 5px;
+  margin-left: 15px;
+  background-color: #000000;
+  border: 2px solid transparent;
+  transition: 0.2s;
+}
+
+.a-sign svg {
+  width: 25px;
+  height: 25px;
+  margin-top: -1px;
+  margin-left: -1px;
+  fill: #f2f2f2;
+}
+
+.a-sign:hover {
+  background-color: transparent;
+  border: 2px solid #000000;
+}
+
+.a-sign:hover svg {
+  fill: #000000;
+}
+/*End Choose Form*/
+
+/*Start Form Register Style*/
+.form-container-register {
+  width: 350px;
+  height: 600px;
+  background-color: #fff;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  border-radius: 10px;
+  box-sizing: border-box;
+  padding: 20px 30px;
+}
+/*End Form Register Style*/
+
+/*Start Form Login Style*/
+.form-container {
+  width: 350px;
+  height: 500px;
+  background-color: #fff;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  border-radius: 10px;
+  box-sizing: border-box;
+  padding: 20px 30px;
+}
+
+.title {
+  text-align: center;
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+  margin: 10px 0 30px 0;
+  font-size: 28px;
+  font-weight: 800;
+}
+
+.form {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  margin-bottom: 15px;
+}
+
+.input {
+  border-radius: 20px;
+  border: 1px solid #c0c0c0;
+  outline: 0 !important;
+  box-sizing: border-box;
+  padding: 12px 15px;
+}
+
+.page-link {
+  text-decoration: underline;
+  margin: 0;
+  text-align: end;
+  color: #747474;
+  text-decoration-color: #747474;
+}
+
+.page-link-label {
+  cursor: pointer;
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+  font-size: 9px;
+  font-weight: 700;
+}
+
+.page-link-label:hover {
+  color: #000;
+}
+
+.form-btn {
+  padding: 10px 15px;
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+  border-radius: 20px;
+  border-color: #1b77da;
+  outline: 0 !important;
+  background: #1b77da;
+  color: white;
+  cursor: pointer;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  transition: 0.2s;
+}
+
+.form-btn:active {
+  border-color: #1b77da;
+  box-shadow: none;
+}
+.form-btn:hover {
+  background-color: transparent;
+  color: #1b77da;
+  border: 2px solid #1b77da;
+}
+
+.sign-up-label {
+  margin: 0;
+  font-size: 10px;
+  color: #747474;
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+}
+
+.sign-up-link {
+  margin-left: 1px;
+  font-size: 11px;
+  text-decoration: underline;
+  text-decoration-color: teal;
+  color: teal;
+  cursor: pointer;
+  font-weight: 800;
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+}
+
+.buttons-container {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  margin-top: 20px;
+  gap: 15px;
+}
+
+.apple-login-button,
+.google-login-button {
+  border-radius: 20px;
+  box-sizing: border-box;
+  padding: 10px 15px;
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 10px 36px 0px,
+    rgba(0, 0, 0, 0.06) 0px 0px 0px 1px;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+  font-size: 11px;
+  gap: 5px;
+}
+
+.apple-login-button {
+  background-color: #000;
+  color: #fff;
+  border: 2px solid #000;
+}
+
+.google-login-button {
+  border: 2px solid #747474;
+}
+
+.apple-icon,
+.google-icon {
+  font-size: 18px;
+  margin-bottom: 1px;
+}
 .login {
   display: flex;
   justify-content: center;
+  align-items: center;
   width: 100vw;
-  margin-top: 350px;
+  height: 100vh;
 }
-.login2 {
+/*End Form Login Style*/
+
+/* .login2 {
   display: flex;
   justify-content: center;
   flex-direction: column;
@@ -19,7 +335,7 @@
   justify-content: center;
   flex-direction: column;
   gap: 8px;
-}
+} */
 
 @font-face {
   font-family: "CustomFont";

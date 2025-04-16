@@ -6,6 +6,7 @@ import Home from "./Home";
 import AuthProvider from "./Context/authContext";
 import DashBoard from "./DashBoard";
 import Privacy from "./PrivateContent";
+import Choose from "./Choose";
 
 function App() {
   return (
@@ -14,6 +15,7 @@ function App() {
         <BrowserRouter>
           <Routes>
             <Route path="/" element={<Home />}></Route>
+            <Route path="/choose" element={<Choose />}></Route>
             <Route path="/login" element={<Login />}></Route>
             <Route path="/register" element={<Register />}></Route>
             <Route
