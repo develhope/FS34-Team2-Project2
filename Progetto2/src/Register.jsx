@@ -20,19 +20,19 @@ export default function Registrazione() {
   function handleChange(event) {
     setUser({ ...user, [event.target.name]: event.target.value });
   }
-
+const [success, setSuccess] = useState(false);
   // Questa è la funzione che si attiverà al submit del form
   function handleSubmit(event) {
     event.preventDefault();
     const validationError = validate(user);
     if (validationError) {
       return alert(validationError);
-    } // Impedisce il comportamento di default del form (evita il refresh della pagina)
+    }
     const valida = registrazione(user);
 
-    // Chiama la funzione 'registrazione' passando i dati dell'utente 
-  if (valida) {
-     navigate("/login");
+    if (valida) {
+      setSuccess(true);
+      setTimeout(() => navigate("/login"), 2000);
     }
   }
 
@@ -72,6 +72,11 @@ export default function Registrazione() {
             />
             <button className="form-btn">Create account</button>
             {error && <p>{error}</p>}
+            {success && (
+              <p className="success-message">
+                La registrazione è avvenuta con successo.
+              </p>
+            )}
           </form>
           <p className="sign-up-label">
             Already have an account?
