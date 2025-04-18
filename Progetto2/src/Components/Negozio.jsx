@@ -14,7 +14,7 @@ export default function Negozio() {
     }
 
     localStorage.setItem("prodotti", JSON.stringify(prodottiSalvati));
-    alert(`${item.nome} aggiunto al carrello`);
+    alert(`${item.title} aggiunto al carrello`);
   }
   return (
     <>
