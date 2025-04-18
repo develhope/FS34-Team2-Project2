@@ -20,7 +20,7 @@ export default function Registrazione() {
   function handleChange(event) {
     setUser({ ...user, [event.target.name]: event.target.value });
   }
-const [success, setSuccess] = useState(false);
+  const [success, setSuccess] = useState(false);
   // Questa è la funzione che si attiverà al submit del form
   function handleSubmit(event) {
     event.preventDefault();
@@ -32,7 +32,7 @@ const [success, setSuccess] = useState(false);
 
     if (valida) {
       setSuccess(true);
-      setTimeout(() => navigate("/login"), 2000);
+      /*setTimeout(() => navigate("/login"), 2000);*/
     }
   }
 
