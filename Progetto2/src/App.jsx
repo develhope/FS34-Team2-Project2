@@ -7,6 +7,7 @@ import AuthProvider from "./Context/authContext";
 import DashBoard from "./DashBoard";
 import Privacy from "./PrivateContent";
 import Choose from "./Choose";
+import Carrello from "./Carrello";
 
 function App() {
   return (
@@ -18,6 +19,7 @@ function App() {
             <Route path="/choose" element={<Choose />}></Route>
             <Route path="/login" element={<Login />}></Route>
             <Route path="/register" element={<Register />}></Route>
+            <Route path="/carrello" element={<Carrello />}></Route>
             <Route
               path="/dashboard"
               element={
