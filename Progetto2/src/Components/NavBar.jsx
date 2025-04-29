@@ -56,8 +56,8 @@ export default function NavBar() {
               <a href="#contatti">Contatti </a>
             </div>
           </div>
-          <Link to="/carrello" className="carrello-container">
-            <div className="carrello-container">
+          <Link to="/carrello">
+            <div className="carrelloNavbar">
               <svg
                 className="carrello"
                 viewBox="0 0 32 32"

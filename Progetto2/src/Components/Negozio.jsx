@@ -24,7 +24,7 @@ export default function Negozio() {
           <div className="card" key={index}>
             <h3>{item.nome}</h3>
             <img src={item.immagine} />
-            <p>{item.prezzo}</p>
+            <p>{item.prezzo}€</p>
             <button
               onClick={() =>
                 aggiungiAlCarrello({
