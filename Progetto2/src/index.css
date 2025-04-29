@@ -31,6 +31,7 @@
 .icon {
   font-size: 20px;
 }
+/*end dashboard*/
 
 .login {
   background-image: url(assets/footer-background.jpeg);
@@ -256,8 +257,13 @@
   display: flex;
   flex-wrap: wrap;
   gap: 20px;
+  justify-content: center;
 }
 
+#carrello-vuoto {
+  margin-bottom: 50px;
+  font-size: 20px;
+}
 .carrelloNavbar {
   position: relative;
   display: inline-block;
@@ -269,8 +275,42 @@
 .carrello-item {
   border: 1px solid #ccc;
   padding: 10px;
-  width: 200px;
+  min-width: 150px;
+  max-height: 400px;
   text-align: center;
+}
+
+.shopcart {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  background-image: url(assets/footer-background.jpeg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.inner-shopcart {
+  display: flex;
+  background-color: aliceblue;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 2px 2px 15px #9d0a0e;
+  flex-wrap: wrap;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+  min-width: 250px;
+}
+
+.inner-shopcart img {
+  width: 100px;
+  height: 100px;
+  border-radius: 10px;
 }
 /* End Carrello Style */
 /* .login2 {
@@ -420,9 +460,6 @@ html {
   background-color: #ddd;
 }
 
-.carrello-container:hover .menu-dropdown3 {
-  display: block;
-}
 .menu-dropdown3 {
   max-height: 300px;
   display: none;
@@ -474,8 +511,6 @@ html {
 body {
   font-family: "CustomFont";
   margin: 0;
-  flex-direction: column;
-  position: absolute;
 }
 header {
   display: flex;
@@ -690,7 +725,7 @@ footer {
 .lingua {
   display: flex;
   flex-direction: row;
-  justify-content: flex-end;
+  margin-top: 15px;
 }
 .lingue {
   background-color: rgb(24, 23, 23);
@@ -718,7 +753,7 @@ footer {
   --decor-line-width: 22px;
   --decor-line-height: 2px;
   --decor-line-verticle-offset: 10px;
-
+  text-align: center;
   position: relative;
   font-size: 25px;
   padding: 10px 0;

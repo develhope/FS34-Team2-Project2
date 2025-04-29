@@ -26,6 +26,7 @@ export default function Negozio() {
             <img src={item.immagine} />
             <p>{item.prezzo}€</p>
             <button
+              className="normal-signin"
               onClick={() =>
                 aggiungiAlCarrello({
                   id: index,

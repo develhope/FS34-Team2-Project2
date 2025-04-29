@@ -153,6 +153,25 @@ export default function Footer() {
                     <option value="Español">Español</option>
                     <option value="English">English</option>
                   </select>
+                  <div className="lingua">
+                    <div className="loghi-immagini">
+                      <img
+                        className="veliero"
+                        src="src/assets/Veliero.png"
+                        alt="Veliero"
+                      />
+                      <img
+                        className="logo-dado"
+                        src="src/assets/logo-sotto.png"
+                        alt="dado"
+                      />
+                      <img
+                        className="logo-gioco-footer"
+                        src="src/assets/logo-gioco.png"
+                        alt="logo-gioco-footer"
+                      />
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>
@@ -160,7 +179,6 @@ export default function Footer() {
               <ul className="lista-footer">
                 <li>
                   <div id="aboutus">About us</div>
-                  <div id="output-aboutus" className="card-footer"></div>
                 </li>
                 <li>
                   <div id="artwork">Artwork</div>
@@ -182,25 +200,7 @@ export default function Footer() {
               </ul>
             </div>
           </div>
-          <div className="lingua">
-            <div className="loghi-immagini">
-              <img
-                className="veliero"
-                src="src/assets/Veliero.png"
-                alt="Veliero"
-              />
-              <img
-                className="logo-dado"
-                src="src/assets/logo-sotto.png"
-                alt="dado"
-              />
-              <img
-                className="logo-gioco-footer"
-                src="src/assets/logo-gioco.png"
-                alt="logo-gioco-footer"
-              />
-            </div>
-          </div>
+
           <div className="copyright">
             <p>
               Copyright: tutti i diritti riservati © <span id="anno"></span>
