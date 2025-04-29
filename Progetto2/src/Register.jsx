@@ -40,7 +40,7 @@ export default function Registrazione() {
     <>
       <div className="login">
         <div className="form-container-register">
-          <p className="title">Register</p>
+          <p className="title">Registrazione</p>
           <form className="form" onSubmit={handleSubmit}>
             <input
               className="input"
