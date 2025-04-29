@@ -1,12 +1,36 @@
-/* From Uiverse.io by faxriddin20 */
+/*start dashboard*/
+.prova1 {
+  display: flex;
+  gap: 40px;
+}
+.dashBoard-all {
+  display: flex;
+  position: absolute;
+}
+.dashBoard {
+  background-image: url(assets/footer-background.jpeg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  width: 100%;
+  display: flex;
+  overflow: hidden;
+  justify-content: center;
+  align-items: center;
+  width: 100vw;
+  height: 100vh;
+}
 .button-container {
   display: flex;
   background-color: black;
-  width: 250px;
-  height: 40px;
+  width: 70px;
+  height: 100vh;
   align-items: center;
   justify-content: space-around;
   border-radius: 10px;
+  flex-direction: column;
+  box-shadow: #9d0a0e 0px 5px 15px;
+  position: fixed;
 }
 
 .button {
