@@ -176,28 +176,34 @@ export default function Footer() {
               </div>
             </div>
             <div className="container-footer1">
-              <ul className="lista-footer">
-                <li>
-                  <div id="aboutus">About us</div>
-                </li>
-                <li>
-                  <div id="artwork">Artwork</div>
-                  <div id="output-artwork" className="card-footer"></div>
-                </li>
-              </ul>
+              <div className="lista-footer">
+                <div id="aboutus">
+                  <h6 className="cnt">About us</h6>
+                  <p>Il Team 2 è una classe di Develhope</p>
+                </div>
+
+                <div id="artwork">
+                  <h6 className="cnt">Artwork</h6>
+                  <img src="assets/logo-gioco.png" alt="foto" /> <br />
+                  <img src="assets/logo-gioco.png" alt="foto" /> <br />
+                  <img src="assets/logo-gioco.png" alt="foto" /> <br />
+                  <img src="assets/logo-gioco.png" alt="foto" />
+                </div>
+              </div>
             </div>
 
             <div className="container-footer2">
-              <ul className="lista-footer">
-                <li>
-                  <div id="api">API</div>
-                  <div id="output-api" className="card-footer"></div>
-                </li>
-                <li>
-                  <div id="licenza">Licenza</div>
-                  <div id="output-licenza" className="card-footer"></div>
-                </li>
-              </ul>
+              <div className="lista-footer">
+                <div id="api">
+                  <h6 className="cnt">API</h6>
+                  <p>LINK</p>
+                </div>
+
+                <div id="licenza">
+                  <h6 className="cnt">Licenza</h6>
+                  <p>Ogni prodotto presente sul sito è sottoposto a licenza</p>
+                </div>
+              </div>
             </div>
           </div>
 
