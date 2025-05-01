@@ -1,4 +1,5 @@
 export default function Footer() {
+  const currentYear = new Date().getFullYear();
   return (
     <>
       <footer>
@@ -179,7 +180,13 @@ export default function Footer() {
               <div className="lista-footer">
                 <div id="aboutus">
                   <h6 className="cnt">About us</h6>
-                  <p>Il Team 2 è una classe di Develhope</p>
+                  <p>
+                    Siamo un piccolo team di appassionati di giochi da tavolo,
+                    narrazione epica e mondi fantastici. Le Cronache dell'Igrall
+                    è nato dal desiderio di creare un'esperienza unica: un gioco
+                    che unisse avventura, strategia e una storia che si evolve a
+                    ogni partita.
+                  </p>
                 </div>
 
                 <div id="artwork">
@@ -196,21 +203,33 @@ export default function Footer() {
               <div className="lista-footer">
                 <div id="api">
                   <h6 className="cnt">API</h6>
-                  <p>LINK</p>
+                  <p>
+                    API - Documentazione La nostra API REST ti permette di
+                    integrare Le Cronache dell’Igrall in applicazioni, siti o
+                    strumenti di gestione delle campagne.
+                    <br /> Endpoint base:
+                    <br />
+                    <a href="#">https://api.lecronachedelligrall.com/v1</a>
+                  </p>
                 </div>
 
                 <div id="licenza">
                   <h6 className="cnt">Licenza</h6>
-                  <p>Ogni prodotto presente sul sito è sottoposto a licenza</p>
+                  <p>
+                    Tutti i contenuti presenti su questo sito, inclusi ma non
+                    limitati a testi, immagini, loghi, grafica, regole di gioco,
+                    materiali promozionali e il nome "Le Cronache dell'Igrall",
+                    sono di proprietà esclusiva dell'autore e sono protetti
+                    dalle leggi sul diritto d'autore e sulla proprietà
+                    intellettuale.
+                  </p>
                 </div>
               </div>
             </div>
           </div>
 
           <div className="copyright">
-            <p>
-              Copyright: tutti i diritti riservati © <span id="anno"></span>
-            </p>
+            <p>Copyright: tutti i diritti riservati {currentYear} ©</p>
           </div>
         </div>
       </footer>
