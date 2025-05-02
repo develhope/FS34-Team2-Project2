@@ -1,5 +1,7 @@
+import { useState } from "react";
 export default function Footer() {
   const currentYear = new Date().getFullYear();
+  const [lingua, setLingua] = useState("Italiano");
   return (
     <>
       <footer>
@@ -143,7 +145,8 @@ export default function Footer() {
                     className="lingue"
                     name="lingue"
                     id="lingue"
-                    value="lingue"
+                    value={lingua}
+                    onChange={(e) => setLingua(e.target.value)}
                   >
                     <option value="Italiano">Italiano</option>
                     <option value="Français">Français</option>

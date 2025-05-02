@@ -101,14 +101,14 @@ export default function NavBar() {
           </Link>
           {user ? (
             <div className="prova1">
-              <div className="accedi-container">
+              <div className="dashBoardLogo">
                 <a href="/dashBoard">
                   <svg
                     fill="#ffffff"
                     width="50"
                     height="50"
                     version="1.1"
-                    className="accedi"
+                    className="dashBoardSvg"
                     xmlns="http://www.w3.org/2000/svg"
                     xmlns:xlink="http://www.w3.org/1999/xlink"
                     viewBox="0 0 450 350"

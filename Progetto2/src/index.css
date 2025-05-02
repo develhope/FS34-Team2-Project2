@@ -530,6 +530,17 @@ html {
   border-radius: 5px;
 }
 
+.dashBoardLogo {
+  position: relative;
+  display: inline-block;
+  cursor: pointer;
+  color: white;
+  border-radius: 5px;
+}
+.dashBoardSvg {
+  margin-left: 10px;
+}
+
 .accedi-container:hover,
 .accedi-container:focus-within {
   display: block;
@@ -694,6 +705,9 @@ footer {
   list-style: none;
   gap: 30px;
 }
+.svg {
+  margin-top: 50px;
+}
 .container-link {
   display: flex;
   flex-direction: row;
@@ -748,7 +762,7 @@ footer {
   display: flex;
   gap: 8px;
   justify-content: flex-end;
-  margin-top: 200px;
+  margin-top: 50px;
 }
 .lingua {
   display: flex;
@@ -762,7 +776,7 @@ footer {
   width: 300px;
 }
 .input-lingua {
-  margin-top: 25px;
+  margin-top: 50px;
 }
 .logo-dado {
   height: 100px;
@@ -786,7 +800,7 @@ footer {
   font-size: 25px;
   padding: 10px 0;
 }
-.cnt{
+.cnt {
   margin: 20px;
 }
 .cnt::after {
@@ -836,19 +850,19 @@ footer {
 .output-artwork {
   justify-content: center;
 }
-#aboutus{
+#aboutus {
   width: 300px;
   height: 300px;
 }
-#api{
+#api {
   width: 300px;
   height: 300px;
 }
-#artwork{
+#artwork {
   width: 300px;
   height: 300px;
 }
-#licenza{
+#licenza {
   width: 300px;
   height: 300px;
 }
@@ -930,6 +944,10 @@ footer {
   }
 }
 @media (max-width: 850px) {
+  header {
+    display: flex;
+    flex-direction: column;
+  }
   .hero-descrizione-2 {
     display: block;
   }
