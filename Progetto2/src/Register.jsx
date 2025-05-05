@@ -24,15 +24,18 @@ export default function Registrazione() {
   // Questa è la funzione che si attiverà al submit del form
   function handleSubmit(event) {
     event.preventDefault();
-    const validationError = validate(user);
-    if (validationError) {
-      return alert(validationError);
+    const validationError = validate(user.password);
+    if (!validationError) {
+      return window.alert(
+        "La password deve contenere almeno 8 caretteri, una lettera maiuscola, un carattere speciale ed alemno un numero."
+      );
     }
-    const valida = registrazione(user);
 
-    if (valida) {
+    if (validationError) {
       setSuccess(true);
-      /*setTimeout(() => navigate("/login"), 2000);*/
+      window.alert("Registrazione Avvenuta con Successo");
+      registrazione(user);
+      navigate("/login");
     }
   }
 
@@ -71,12 +74,6 @@ export default function Registrazione() {
               onChange={handleChange}
             />
             <button className="form-btn">Crea l'account</button>
-            {error && <p>{error}</p>}
-            {success && (
-              <p className="success-message">
-                La registrazione è avvenuta con successo.
-              </p>
-            )}
           </form>
           <p className="sign-up-label">
             Hai già un account?{" "}

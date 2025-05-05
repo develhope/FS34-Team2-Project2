@@ -8,6 +8,7 @@ import DashBoard from "./DashBoard";
 import Privacy from "./PrivateContent";
 import Choose from "./Choose";
 import Carrello from "./Carrello";
+import Privacy2 from "./PrivateContent2";
 
 function App() {
   return (
@@ -17,8 +18,22 @@ function App() {
           <Routes>
             <Route path="/" element={<Home />}></Route>
             <Route path="/choose" element={<Choose />}></Route>
-            <Route path="/login" element={<Login />}></Route>
-            <Route path="/register" element={<Register />}></Route>
+            <Route
+              path="/login"
+              element={
+                <Privacy2>
+                  <Login />
+                </Privacy2>
+              }
+            ></Route>
+            <Route
+              path="/register"
+              element={
+                <Privacy2>
+                  <Register />
+                </Privacy2>
+              }
+            ></Route>
             <Route path="/carrello" element={<Carrello />}></Route>
             <Route
               path="/dashboard"

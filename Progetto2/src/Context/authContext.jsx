@@ -39,7 +39,6 @@ export default function AuthProvider({ children }) {
       setError("credenziali errate");
       return { esito: false, messaggio: "credenziali errate" };
     }
-    
 
     // Se l'utente esiste, lo salviamo nello stato e anche nel localStorage per tenerlo "loggato"
     setUser(userExist);
@@ -65,7 +64,7 @@ export default function AuthProvider({ children }) {
       setError(
         "La password deve contenere almeno 8 caretteri, una lettera maiuscola, un carattere speciale ed alemno un numero."
       );
-      return;
+      return { esito: false, messaggio: "Password non corretta" };
     }
 
     // Altrimenti, aggiungiamo il nuovo utente alla lista

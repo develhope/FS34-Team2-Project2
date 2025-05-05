@@ -19,12 +19,15 @@ export default function Login() {
   }
 
   // Funzione che si attiva quando inviamo il form
+
   function handleSubmit(event) {
     event.preventDefault(); // Previene il refresh della pagina
-    login(user);
     // Chiamiamo la funzione di login passando i dati dell’utente
-    if (!error) {
+    const loggato = login(user);
+    if (!loggato) {
       navigate("/dashboard");
+    } else {
+      window.alert("Credenziali Errate");
     }
   }
 
@@ -49,7 +52,6 @@ export default function Login() {
           />
 
           <button className="form-btn">Login</button>
-          {error && <p>{error}</p>}
         </form>
         <p className="sign-up-label">
           Non hai un account?{" "}
