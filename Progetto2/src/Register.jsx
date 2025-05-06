@@ -27,13 +27,13 @@ export default function Registrazione() {
     const validationError = validate(user.password);
     if (!validationError) {
       return window.alert(
-        "La password deve contenere almeno 8 caretteri, una lettera maiuscola, un carattere speciale ed alemno un numero."
+        "La password deve contenere almeno 8 caratteri, una lettera maiuscola, un carattere speciale ed almeno un numero."
       );
     }
 
     if (validationError) {
       setSuccess(true);
-      window.alert("Registrazione Avvenuta con Successo");
+      window.alert("Registrazione avvenuta con successo");
       registrazione(user);
       navigate("/login");
     }
