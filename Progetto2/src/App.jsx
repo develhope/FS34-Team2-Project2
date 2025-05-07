@@ -9,7 +9,8 @@ import Privacy from "./PrivateContent";
 import Choose from "./Choose";
 import Carrello from "./Carrello";
 import Privacy2 from "./PrivateContent2";
-
+import React from "react";
+import { ToastContainer, toast } from "react-toastify";
 function App() {
   return (
     <>
@@ -45,6 +46,7 @@ function App() {
             ></Route>
             <Route></Route>
           </Routes>
+          <ToastContainer />
         </BrowserRouter>
       </AuthProvider>
     </>

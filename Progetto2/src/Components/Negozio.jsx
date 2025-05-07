@@ -1,4 +1,5 @@
 import items from "../ItemsNegozio";
+import { toast } from "react-toastify";
 export default function Negozio() {
   function aggiungiAlCarrello(item) {
     const prodottiSalvati = JSON.parse(
@@ -14,7 +15,9 @@ export default function Negozio() {
     }
 
     localStorage.setItem("prodotti", JSON.stringify(prodottiSalvati));
-    alert(`${item.title} aggiunto al carrello`);
+    const notifica = () => toast(`${item.title} aggiunto al carrello`);
+    notifica();
+    // alert(`${item.title} aggiunto al carrello`);
   }
   return (
     <>

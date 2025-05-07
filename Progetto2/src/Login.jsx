@@ -4,6 +4,8 @@ import { useState } from "react";
 import { useAuth } from "./Context/authContext";
 import { Link, useNavigate } from "react-router-dom";
 // Importiamo il nostro hook personalizzato che ci dà accesso alla funzione login del context
+import React from "react";
+import { ToastContainer, toast } from "react-toastify";
 
 export default function Login() {
   // Stato locale per tenere traccia dell'email e della password inserite nel form
@@ -27,7 +29,9 @@ export default function Login() {
     if (!loggato) {
       navigate("/dashboard");
     } else {
-      window.alert("Credenziali Errate");
+      // window.alert("Credenziali Errate");
+      const notifica = () => toast("Credenziali Errate!");
+      notifica();
     }
   }
 

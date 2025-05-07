@@ -1,6 +1,9 @@
 import { useEffect, useState } from "react";
 import { useAuth } from "./Context/authContext";
 import { useNavigate } from "react-router-dom";
+import React from "react";
+import { ToastContainer, toast } from "react-toastify";
+
 export default function Carrello() {
   const navigate = useNavigate();
   const { user } = useAuth();
@@ -60,18 +63,25 @@ export default function Carrello() {
       [event.target.name]: event.target.value,
     });
   }
-  function handleSubmit() {
+  function handleSubmit(event) {
+    // event.preventDefault();
     setOrders((prev) => [...prev, ordine]);
     localStorage.setItem("prodotti", []);
     window.alert("Prodotti Acquistati Con Successo!!");
+    // const notifica = () => toast("Prova"); //// NOTIFICHE
+    // notifica();
   }
-
   function handleCk() {
-    window.alert(
-      "Per effettuare il checkout è necessario effettuare l'accesso"
-    ),
+    const notifica = () =>
+      toast("Per effettuare il checkout è necessario effettuare l'accesso"); //// NOTIFICHE
+    notifica(),
+      // window.alert(
+      //   "Per effettuare il checkout è necessario effettuare l'accesso"
+      // ),
       navigate("/login");
   }
+
+  const notify = () => toast("Prodotti Acquistati Con Successo!!");
   return (
     <div className="shopcart">
       <div className="inner-shopcart">
@@ -131,7 +141,6 @@ export default function Carrello() {
                       <span>Lastname</span>
                     </label>
                   </div>
-
                   <label>
                     <input
                       onChange={handleChange}
@@ -144,7 +153,6 @@ export default function Carrello() {
                     />
                     <span>Email</span>
                   </label>
-
                   <label>
                     <input
                       onChange={handleChange}
@@ -186,7 +194,11 @@ export default function Carrello() {
                     />
                     <span>Scadenza Carta</span>
                   </label>
-                  <button type="submit" className="normal-signin">
+                  <button
+                    type="submit"
+                    onClick={notify}
+                    className="normal-signin"
+                  >
                     CheckOut
                   </button>
                   <p class="signin">
@@ -205,7 +217,6 @@ export default function Carrello() {
             <button onClick={svuotaCarrello} className="normal-signin">
               Svuota carrello
             </button>
-
             <a href="/">Ritorna alla Home</a>
           </>
         )}
