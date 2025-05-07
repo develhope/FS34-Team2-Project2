@@ -13,7 +13,7 @@ export default function NavBarDash() {
   }
 
   function handleCarrello() {
-    navigate("/carrello");
+    navigate("/ordini");
   }
   return (
     <div className="button-container">

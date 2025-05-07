@@ -11,6 +11,7 @@ import Carrello from "./Carrello";
 import Privacy2 from "./PrivateContent2";
 import React from "react";
 import { ToastContainer, toast } from "react-toastify";
+import Orders from "./Orders";
 function App() {
   return (
     <>
@@ -44,7 +45,7 @@ function App() {
                 </Privacy>
               }
             ></Route>
-            <Route></Route>
+            <Route path="/ordini" element={<Orders/>}></Route>
           </Routes>
           <ToastContainer />
         </BrowserRouter>
