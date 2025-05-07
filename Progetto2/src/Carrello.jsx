@@ -37,12 +37,16 @@ export default function Carrello() {
     return ordini ? JSON.parse(ordini) : [];
   });
 
-  // const [ordine, setOrdine] = useState({
-  //   id: Date.now(),
-  //   nome: user.nome,
-  //   cognome: user.cognome,
-  //   email: user.email,
-  // });
+  const [ordine, setOrdine] = useState(
+    user
+      ? {
+          id: Date.now(),
+          nome: user.nome,
+          cognome: user.cognome,
+          email: user.email,
+        }
+      : []
+  );
 
   // Ogni volta che cambia la lista utenti, aggiorniamo il localStorage
   useEffect(() => {
