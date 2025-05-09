@@ -64,12 +64,13 @@ export default function Carrello() {
     });
   }
   function handleSubmit(event) {
-    // event.preventDefault();
+    event.preventDefault();
     setOrders((prev) => [...prev, ordine]);
     localStorage.setItem("prodotti", []);
-    window.alert("Prodotti Acquistati Con Successo!!");
-    // const notifica = () => toast("Prova"); //// NOTIFICHE
-    // notifica();
+    setProdottiCarrello([]);
+    // window.alert("Prodotti Acquistati Con Successo!!");
+    const notifica = () => toast("Prova");
+    notifica();
   }
   function handleCk() {
     const notifica = () =>

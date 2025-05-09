@@ -33,6 +33,7 @@ export default function AuthProvider({ children }) {
     const userExist = users.find(
       (user) => user.email === email && user.password === password
     );
+    //TODO Verificare se email e password sono null o stringa vuota
 
     // Se non lo troviamo, ritorniamo un errore
     if (!userExist) {
@@ -41,6 +42,7 @@ export default function AuthProvider({ children }) {
     }
 
     // Se l'utente esiste, lo salviamo nello stato e anche nel localStorage per tenerlo "loggato"
+    // TODO Fare la chiamata fetch al backend,
     setUser(userExist);
     setError(null);
     localStorage.setItem("user", JSON.stringify(userExist));
