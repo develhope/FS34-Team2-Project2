@@ -66,6 +66,7 @@ export default function Registrazione() {
               name="nome"
               placeholder="Inserisci il tuo nome"
               onChange={handleChange}
+              required
             />
             <input
               className="input"
@@ -73,6 +74,7 @@ export default function Registrazione() {
               name="cognome"
               placeholder="Inserisci il tuo cognome"
               onChange={handleChange}
+              required
             />
             <input
               className="input"
@@ -80,6 +82,7 @@ export default function Registrazione() {
               name="email"
               placeholder="Inserisci la tua email"
               onChange={handleChange}
+              required
             />
             <input
               className="input"
@@ -87,6 +90,7 @@ export default function Registrazione() {
               name="password"
               placeholder="Inserisci la tua password"
               onChange={handleChange}
+              required
             />
             <button className="form-btn">Crea l'account</button>
           </form>

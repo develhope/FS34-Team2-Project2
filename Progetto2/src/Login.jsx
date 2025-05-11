@@ -46,6 +46,7 @@ export default function Login() {
             name="email"
             placeholder="Inserisci la tua email"
             onChange={handleChange}
+            required
           />
           <input
             className="input"
@@ -53,6 +54,7 @@ export default function Login() {
             name="password"
             placeholder="Inserisci la tua password"
             onChange={handleChange}
+            required
           />
 
           <button className="form-btn">Login</button>
