@@ -69,8 +69,6 @@ export default function Carrello() {
     localStorage.setItem("prodotti", []);
     setProdottiCarrello([]);
     // window.alert("Prodotti Acquistati Con Successo!!");
-    const notifica = () => toast("Prova");
-    notifica();
   }
   function handleCk() {
     const notifica = () =>
