@@ -8,18 +8,19 @@
   background-color: #fff;
   padding: 20px;
   border-radius: 20px;
-  position: relative;
+  /* position: relative; */
+  box-shadow: 2px 2px 15px #9d0a0e;
 }
 
 .title-carrello {
   font-size: 28px;
-  color: royalblue;
+  color: black;
   font-weight: 600;
-  letter-spacing: -1px;
+  margin: 0;
   position: relative;
   display: flex;
   align-items: center;
-  padding-left: 30px;
+  /* padding-left: 30px; */
 }
 
 .title-carrello ::before,
@@ -67,6 +68,7 @@
   display: flex;
   width: 100%;
   gap: 6px;
+  flex-direction: column;
 }
 
 .form label {
@@ -562,6 +564,25 @@
   border-radius: 10px;
 }
 /* End Carrello Style */
+/* Scroll bar style*/
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: #0f0f0f; /* Colore dello sfondo */
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #0f0f0f; /* Colore della barra di scorrimento */
+  border-radius: 10px;
+  border: 2px solid #0f0f0f; /* Spazio attorno */
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background-color: black;
+}
+/* end Scroll bar style*/
 /* .login2 {
   display: flex;
   justify-content: center;

@@ -69,6 +69,8 @@ export default function Carrello() {
     localStorage.setItem("prodotti", []);
     setProdottiCarrello([]);
     // window.alert("Prodotti Acquistati Con Successo!!");
+    const notify = () => toast("Prodotti Acquistati Con Successo!!");
+    notify();
   }
   function handleCk() {
     const notifica = () =>
@@ -80,9 +82,14 @@ export default function Carrello() {
       navigate("/login");
   }
 
-  const notify = () => toast("Prodotti Acquistati Con Successo!!");
   return (
-    <div className="shopcart">
+    <div
+      className="shopcart"
+      style={{
+        height: orders && user ? "100vh" : "100vh",
+        overflow: orders && user ? "auto" : "hidden",
+      }}
+    >
       <div className="inner-shopcart">
         <h1 className="title">CARRELLO</h1>
         {prodottiCarrello.length === 0 ? (
@@ -107,14 +114,14 @@ export default function Carrello() {
                   </button>
                 </div>
               ))}
-
+            </div>
+            <div>
               {user ? (
-                <form class="form-carrello" onSubmit={handleSubmit}>
-                  <p class="title-carrello">Register </p>
-                  <p class="message">
-                    Signup now and get full access to our app.{" "}
-                  </p>
+                <form className="form-carrello" onSubmit={handleSubmit}>
+                  <p className="title-carrello">Inserire Dati Pagamento: </p>
+
                   <div class="flex">
+                    <span>Nome:</span>
                     <label>
                       <input
                         onChange={handleChange}
@@ -124,22 +131,22 @@ export default function Carrello() {
                         type="text"
                         class="input"
                       />
-                      <span>Firstname</span>
-                    </label>
-
-                    <label>
-                      <input
-                        onChange={handleChange}
-                        name="cognome"
-                        value={user.cognome}
-                        required
-                        placeholder=""
-                        type="text"
-                        class="input"
-                      />
-                      <span>Lastname</span>
                     </label>
                   </div>
+                  <span>Cognome:</span>
+
+                  <label>
+                    <input
+                      onChange={handleChange}
+                      name="cognome"
+                      value={user.cognome}
+                      required
+                      placeholder=""
+                      type="text"
+                      class="input"
+                    />
+                  </label>
+                  <span>Email:</span>
                   <label>
                     <input
                       onChange={handleChange}
@@ -150,39 +157,39 @@ export default function Carrello() {
                       type="email"
                       class="input"
                     />
-                    <span>Email</span>
                   </label>
+                  <span>Indirizzo Residenza:</span>
                   <label>
                     <input
                       onChange={handleChange}
                       name="IndirizzoResidenza"
                       required
-                      placeholder=""
+                      placeholder="Inserire residenza"
                       type="text"
                       class="input"
                     />
-                    <span>Indirizzo Residenza</span>
                   </label>
+                  <span>Numero Carta:</span>
                   <label>
                     <input
                       name="NumeroCarta"
                       required
-                      placeholder=""
+                      placeholder="Inserire numero carta"
                       type="number"
                       class="input"
                     />
-                    <span>Numero Carta</span>
                   </label>
+                  <span>Inserire CVV:</span>
                   <label>
                     <input
                       name="CVV"
                       required
-                      placeholder=""
+                      placeholder="inserire codice CVV "
                       type="number"
                       class="input"
                     />
-                    <span>Inserire CVV</span>
                   </label>
+                  <span>Scadenza Carta:</span>
                   <label>
                     <input
                       name="ScadenzaCarta"
@@ -191,18 +198,10 @@ export default function Carrello() {
                       type="date"
                       class="input"
                     />
-                    <span>Scadenza Carta</span>
                   </label>
-                  <button
-                    type="submit"
-                    onClick={notify}
-                    className="normal-signin"
-                  >
+                  <button type="submit" className="normal-signin">
                     CheckOut
                   </button>
-                  <p class="signin">
-                    Already have an acount ? <a href="#">Signin</a>{" "}
-                  </p>
                 </form>
               ) : null}
             </div>
