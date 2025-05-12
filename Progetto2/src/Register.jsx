@@ -6,6 +6,7 @@ import { ToastContainer, toast } from "react-toastify";
 export default function Registrazione() {
   // Inizializziamo lo stato con un oggetto "user" che conterrà i dati inseriti dall’utente nel form
   const [user, setUser] = useState({
+    id: Date.now(),
     nome: "",
     cognome: "",
     email: "",

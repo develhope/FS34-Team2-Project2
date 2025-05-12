@@ -102,7 +102,7 @@ export default function NavBar() {
           {user ? (
             <div className="prova1">
               <div className="dashBoardLogo">
-                <a href="/dashBoard">
+                <a href="/dashboard">
                   <svg
                     fill="#ffffff"
                     width="50"

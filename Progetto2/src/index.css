@@ -454,9 +454,6 @@
   width: 100%;
   height: 100vh;
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  overflow: scroll;
 }
 #no-order {
   color: aliceblue;
@@ -482,7 +479,13 @@
   margin-bottom: 20px;
   box-shadow: #9d0a0e 0px 5px 15px;
 }
-
+#claudio {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100vw;
+  overflow: auto;
+}
 .ordine-card h2 {
   margin-bottom: 10px;
   color: #9d0a0e;

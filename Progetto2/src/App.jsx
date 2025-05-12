@@ -12,6 +12,7 @@ import Privacy2 from "./PrivateContent2";
 import React from "react";
 import { ToastContainer, toast } from "react-toastify";
 import Orders from "./Orders";
+import Profilo from "./Profilo";
 function App() {
   return (
     <>
@@ -45,7 +46,8 @@ function App() {
                 </Privacy>
               }
             ></Route>
-            <Route path="/ordini" element={<Orders/>}></Route>
+            <Route path="/dashBoard/ordini" element={<Orders />}></Route>
+            <Route path="/dashBoard/profilo" element={<Profilo />}></Route>
           </Routes>
           <ToastContainer />
         </BrowserRouter>
