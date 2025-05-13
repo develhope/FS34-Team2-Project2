@@ -70,50 +70,5 @@ export default function Login() {
         </span>
       </div>
     </div>
-
-    // <div className="login">
-    //   <div className="login2">
-    //     <h2>Login</h2>
-
-    //     <form className="form-login" onSubmit={handleSubmit}>
-    //       <div>
-    //         <label>Email</label> <br />
-    //         <input
-    //           type="email"
-    //           name="email"
-    //           placeholder="Inserisci la tua email"
-    //           onChange={handleChange}
-    //         />
-    //       </div>
-
-    //       <div>
-    //         <label>Password</label> <br />
-    //         <input
-    //           type="password"
-    //           name="password"
-    //           placeholder="Inserisci la tua password"
-    //           onChange={handleChange}
-    //         />
-    //       </div>
-
-    //       <div>
-    //         <label>
-    //           <input className="checkbox" type="checkbox" />
-    //           <span>Ricordami</span>
-    //         </label>
-    //         <a href="#">Password Dimentica?</a>
-    //       </div>
-
-    //       <button type="submit">Login</button>
-    //       {error && <p>{error}</p>}
-    //     </form>
-
-    //     <div>
-    //       Non hai un Account?
-    //       <a href="/register">Registrati</a>
-    //     </div>
-    //     <a href="/">Ritorna alla Home</a>
-    //   </div>
-    // </div>
   );
 }
