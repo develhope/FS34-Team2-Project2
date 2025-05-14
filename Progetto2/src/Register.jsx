@@ -15,8 +15,30 @@ export default function Registrazione() {
   const { registrazione, validate } = useAuth();
   const navigate = useNavigate();
 
-  const notifica = () => toast("Registrazione avvenuta con successo");
-  const notifica2 = () => toast("Utente già registrato");
+  const notificaSuccesso = (msg) =>
+    toast.success(msg, {
+      position: "top-right",
+      autoClose: 3000,
+      hideProgressBar: false,
+      closeOnClick: true,
+      pauseOnHover: true,
+      draggable: true,
+      progress: undefined,
+      theme: "colored",
+    });
+
+  const notificaErrore = (msg) =>
+    toast.error(msg, {
+      position: "top-right",
+      autoClose: 3000,
+      hideProgressBar: false,
+      closeOnClick: true,
+      pauseOnHover: true,
+      draggable: true,
+      progress: undefined,
+      theme: "colored",
+    });
+
   const notifica3 = () =>
     toast(
       "La password deve contenere almeno 8 caratteri una lettera maiuscola e un numero speciale"
@@ -42,11 +64,11 @@ export default function Registrazione() {
       const result = await response.json();
       if (result.ok) {
         setMessage(result.message);
-        notifica();
+        notificaSuccesso("Registrazione avvenuta con successo!");
         return navigate("/login");
       } else {
         setMessage(result.message);
-        notifica2();
+        notificaErrore("Utente già registrato");
         navigate("/login");
       }
     } catch {
