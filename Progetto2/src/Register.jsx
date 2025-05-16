@@ -2,6 +2,7 @@ import { useState } from "react";
 import { useAuth } from "./Context/authContext";
 import { useNavigate, Link } from "react-router-dom";
 import { ToastContainer, toast } from "react-toastify";
+import { notificaSuccesso, notificaErrore } from "./Notifiche/Notifiche";
 
 export default function Registrazione() {
   // Inizializziamo lo stato con un oggetto "user" che conterrà i dati inseriti dall’utente nel form
@@ -22,11 +23,6 @@ export default function Registrazione() {
   function handleChange(event) {
     setUser({ ...user, [event.target.name]: event.target.value });
   }
-  const notifica = () =>
-    toast(
-      "La password deve contenere almeno 8 caratteri, una lettera maiuscola, un carattere speciale ed almeno un numero."
-    );
-  const notifica2 = () => toast("Utente già registrato");
 
   const [success, setSuccess] = useState(false);
   // Questa è la funzione che si attiverà al submit del form
@@ -36,22 +32,20 @@ export default function Registrazione() {
     console.log(error);
 
     if (!validationError) {
-      return notifica();
-      //window.alert(
-      //   "La password deve contenere almeno 8 caratteri, una lettera maiuscola, un carattere speciale ed almeno un numero."
-      // );
+      return notificaErrore(
+        "La password deve contenere almeno 8 caratteri, una lettera maiuscola, un carattere speciale ed almeno un numero."
+      );
     }
 
     if (validationError) {
       const reg = registrazione(user);
       if (reg) {
-        notifica2();
+        notificaErrore("Utente già registrato");
         return navigate("/login");
       }
       setSuccess(true);
-      // window.alert("Registrazione avvenuta con successo");
-      const notifica = () => toast("Registrazione avvenuta con successo"); //// NOTIFICHE
-      notifica(), navigate("/login");
+      notificaSuccesso("Registrazione avvenuta con successo"),
+        navigate("/login");
     }
   }
 

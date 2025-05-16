@@ -3,6 +3,7 @@ import { useAuth } from "./Context/authContext";
 import { useNavigate } from "react-router-dom";
 import React from "react";
 import { ToastContainer, toast } from "react-toastify";
+import { notificaAvvertimento, notificaSuccesso } from "./Notifiche/Notifiche";
 
 export default function Carrello() {
   const navigate = useNavigate();
@@ -68,17 +69,12 @@ export default function Carrello() {
     setOrders((prev) => [...prev, ordine]);
     localStorage.setItem("prodotti", []);
     setProdottiCarrello([]);
-    // window.alert("Prodotti Acquistati Con Successo!!");
-    const notify = () => toast("Prodotti Acquistati Con Successo!!");
-    notify();
+    notificaSuccesso("Prodotti Acquistati Con Successo!!");
   }
   function handleCk() {
-    const notifica = () =>
-      toast("Per effettuare il checkout è necessario effettuare l'accesso"); //// NOTIFICHE
-    notifica(),
-      // window.alert(
-      //   "Per effettuare il checkout è necessario effettuare l'accesso"
-      // ),
+    notificaAvvertimento(
+      "Per effettuare il checkout è necessario effettuare l'accesso"
+    ),
       navigate("/login");
   }
 

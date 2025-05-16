@@ -1,37 +1,27 @@
 import { useState } from "react";
-// Importiamo useState per gestire i dati inseriti nel form
-
 import { useAuth } from "./Context/authContext";
 import { Link, useNavigate } from "react-router-dom";
-// Importiamo il nostro hook personalizzato che ci dà accesso alla funzione login del context
 import React from "react";
 import { ToastContainer, toast } from "react-toastify";
+import { notificaErrore, notificaSuccesso } from "./Notifiche/Notifiche";
 
 export default function Login() {
-  // Stato locale per tenere traccia dell'email e della password inserite nel form
   const [user, setUser] = useState({ email: "", password: "" });
-  const navigate = useNavigate();
-  // Estraiamo la funzione di login dal context, che useremo quando l’utente invia il form
   const { login, error } = useAuth();
+  const navigate = useNavigate();
 
-  // Funzione che si attiva quando cambiamo valore in un campo del form
-  // Aggiorna dinamicamente il campo giusto in base al nome dell’input (email o password)
   function handleChange(event) {
     setUser({ ...user, [event.target.name]: event.target.value });
   }
 
-  // Funzione che si attiva quando inviamo il form
-
   function handleSubmit(event) {
-    event.preventDefault(); // Previene il refresh della pagina
-    // Chiamiamo la funzione di login passando i dati dell’utente
+    event.preventDefault();
     const loggato = login(user);
     if (!loggato) {
       navigate("/dashboard");
+      notificaSuccesso("Login Effettuato");
     } else {
-      // window.alert("Credenziali Errate");
-      const notifica = () => toast("Credenziali Errate!");
-      notifica();
+      notificaErrore("Credenziali Errate!");
     }
   }
 
