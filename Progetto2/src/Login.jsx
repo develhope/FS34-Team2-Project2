@@ -1,29 +1,49 @@
 import { useState } from "react";
 import { useAuth } from "./Context/authContext";
 import { Link, useNavigate } from "react-router-dom";
-import React from "react";
-import { ToastContainer, toast } from "react-toastify";
 import { notificaErrore, notificaSuccesso } from "./Notifiche/Notifiche";
 
 export default function Login() {
-  const [user, setUser] = useState({ email: "", password: "" });
-  const { login, error } = useAuth();
+  const [data, setData] = useState({});
+  const { login } = useAuth();
   const navigate = useNavigate();
 
   function handleChange(event) {
-    setUser({ ...user, [event.target.name]: event.target.value });
+    setData((prev) => ({
+      ...prev,
+      [event.target.name]: event.target.value,
+    }));
   }
 
-  function handleSubmit(event) {
+  async function handleSubmit(event) {
     event.preventDefault();
-    const loggato = login(user);
-    if (!loggato) {
-      navigate("/dashboard");
-      notificaSuccesso("Login Effettuato");
-    } else {
-      notificaErrore("Credenziali Errate!");
+    try {
+      const logged = await login(data);
+      console.log(logged);
+      if (logged) {
+        setTimeout(() => {
+          navigate("/dashboard");
+        }, 5000);
+      }
+    } catch (error) {
+      console.error(error);
     }
   }
+
+  // function handleChange(event) {
+  //   setUser({ ...user, [event.target.name]: event.target.value });
+  // }
+
+  // function handleSubmit(event) {
+  //   event.preventDefault();
+  //   const loggato = login(user);
+  //   if (!loggato) {
+  //     navigate("/dashboard");
+  //     notificaSuccesso("Login Effettuato");
+  //   } else {
+  //     notificaErrore("Credenziali Errate!");
+  //   }
+  // }
 
   return (
     <div className="login">

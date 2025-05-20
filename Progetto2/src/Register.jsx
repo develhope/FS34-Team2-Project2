@@ -5,40 +5,12 @@ import { ToastContainer, toast } from "react-toastify";
 import { notificaSuccesso, notificaErrore } from "./Notifiche/Notifiche";
 
 export default function Registrazione() {
-  // Inizializziamo lo stato con un oggetto "user" che conterrà i dati inseriti dall’utente nel form
-  const [success, setSuccess] = useState(false);
   const [message, setMessage] = useState();
   const [user, setUser] = useState({
     id: Date.now(),
   });
 
-  // Prendiamo la funzione di registrazione dal nostro context (quello creato in AuthProvider)
-  const { registrazione, validate } = useAuth();
   const navigate = useNavigate();
-
-  const notificaSuccesso = (msg) =>
-    toast.success(msg, {
-      position: "top-right",
-      autoClose: 3000,
-      hideProgressBar: false,
-      closeOnClick: true,
-      pauseOnHover: true,
-      draggable: true,
-      progress: undefined,
-      theme: "colored",
-    });
-
-  const notificaErrore = (msg) =>
-    toast.error(msg, {
-      position: "top-right",
-      autoClose: 3000,
-      hideProgressBar: false,
-      closeOnClick: true,
-      pauseOnHover: true,
-      draggable: true,
-      progress: undefined,
-      theme: "colored",
-    });
 
   const notifica3 = () =>
     toast(
@@ -56,7 +28,6 @@ export default function Registrazione() {
 
   async function handleSubmit(event) {
     event.preventDefault();
-<<<<<<< HEAD
     try {
       const response = await fetch("http://localhost:3000/utenti", {
         method: "POST",
@@ -67,57 +38,16 @@ export default function Registrazione() {
       if (result.ok) {
         setMessage(result.message);
         notificaSuccesso("Registrazione avvenuta con successo!");
-=======
-    const validationError = validate(user.password);
-    console.log(error);
-
-    if (!validationError) {
-      return notificaErrore(
-        "La password deve contenere almeno 8 caratteri, una lettera maiuscola, un carattere speciale ed almeno un numero."
-      );
-    }
-
-    if (validationError) {
-      const reg = registrazione(user);
-      if (reg) {
-        notificaErrore("Utente già registrato");
->>>>>>> preRelease
         return navigate("/login");
       } else {
         setMessage(result.message);
         notificaErrore("Utente già registrato");
         navigate("/login");
       }
-<<<<<<< HEAD
     } catch {
       return setMessage("errore catch");
-=======
-      setSuccess(true);
-      notificaSuccesso("Registrazione avvenuta con successo"),
-        navigate("/login");
->>>>>>> preRelease
     }
   }
-  // Questa è la funzione che si attiverà al submit del form
-  // function handleSubmit(event) {
-  //   event.preventDefault();
-  //   const validationError = validate(user.password);
-
-  //   if (!validationError) {
-  //     return notifica();
-  //   }
-
-  //   if (validationError) {
-  //     const reg = registrazione(user);
-  //     if (reg) {
-  //       notifica2();
-  //       return navigate("/login");
-  //     }
-  //     setSuccess(true);
-  //     const notifica = () => toast("Registrazione avvenuta con successo"); //// NOTIFICHE
-  //     notifica(), navigate("/login");
-  //   }
-  // }
 
   return (
     <>

@@ -83,7 +83,7 @@ export default function Carrello() {
       className="shopcart"
       style={{
         height: orders && user ? "100vh" : "100vh",
-        overflow: orders && user ? "auto" : "hidden",
+        overflow: orders && user ? "auto" : "scroll",
       }}
     >
       <div className="inner-shopcart">

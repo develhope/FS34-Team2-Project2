@@ -328,7 +328,7 @@
 .title {
   text-align: center;
   margin: 10px 0 30px 0;
-  font-size: 28px;
+  font-size: 30px;
   --decor-line-color: linear-gradient(
     90deg,
     rgba(157, 10, 14, 0),
@@ -525,8 +525,8 @@
 }
 
 #carrello-vuoto {
-  margin-bottom: 50px;
-  font-size: 20px;
+  margin-top: 50px;
+  font-size: 25px;
 }
 .carrelloNavbar {
   position: relative;
@@ -568,7 +568,8 @@
   flex-direction: column;
   align-items: center;
   gap: 20px;
-  min-width: 250px;
+  width: 1000px;
+  min-height: 400px;
 }
 
 .inner-shopcart img {
@@ -1138,7 +1139,7 @@ footer {
   justify-content: space-around;
   align-items: center;
   width: 100%;
-  gap: 20px;
+  gap: 50px;
   margin-bottom: 50px;
 }
 .card > img {

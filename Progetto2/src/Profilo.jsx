@@ -1,9 +1,38 @@
 import React, { useEffect, useState } from "react";
 import { useAuth } from "./Context/authContext";
 import NavBarDash from "./Components/NavBarDash";
+import { notificaErrore, notificaSuccesso } from "./Notifiche/Notifiche";
+import { useNavigate } from "react-router-dom";
 
 export default function Profilo() {
   const { user } = useAuth();
+  const navigazione = useNavigate();
+
+  async function handleDelete(event) {
+    if (confirm("Sei sicuro di eliminare il tuo account? ")) {
+      try {
+        const response = await fetch(
+          `http://localhost:3000/utente/${user.id}`,
+          {
+            method: "DELETE",
+          }
+        );
+        const result = await response.json();
+        if (response.ok) {
+          console.log("utente cancellato con successo");
+          localStorage.removeItem("user");
+          notificaSuccesso("Account eliminato con successo!");
+          navigazione("/");
+        } else {
+          console.log("Utente non trovato");
+        }
+      } catch (error) {
+        console.error(error);
+      }
+    } else {
+      console.log("Operazione annullata");
+    }
+  }
 
   return (
     <div className="ordini-container">
@@ -24,6 +53,7 @@ export default function Profilo() {
             <p>
               <strong>Email: </strong> {user.email}
             </p>
+            <button onClick={handleDelete}>Cancella dati utente</button>
           </div>
         </div>
         ;
