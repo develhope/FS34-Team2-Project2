@@ -2,6 +2,7 @@ import { useState } from "react";
 import { useAuth } from "./Context/authContext";
 import { useNavigate, Link } from "react-router-dom";
 import { ToastContainer, toast } from "react-toastify";
+import { notificaSuccesso, notificaErrore } from "./Notifiche/Notifiche";
 
 export default function Registrazione() {
   // Inizializziamo lo stato con un oggetto "user" che conterrà i dati inseriti dall’utente nel form
@@ -55,6 +56,7 @@ export default function Registrazione() {
 
   async function handleSubmit(event) {
     event.preventDefault();
+<<<<<<< HEAD
     try {
       const response = await fetch("http://localhost:3000/utenti", {
         method: "POST",
@@ -65,14 +67,35 @@ export default function Registrazione() {
       if (result.ok) {
         setMessage(result.message);
         notificaSuccesso("Registrazione avvenuta con successo!");
+=======
+    const validationError = validate(user.password);
+    console.log(error);
+
+    if (!validationError) {
+      return notificaErrore(
+        "La password deve contenere almeno 8 caratteri, una lettera maiuscola, un carattere speciale ed almeno un numero."
+      );
+    }
+
+    if (validationError) {
+      const reg = registrazione(user);
+      if (reg) {
+        notificaErrore("Utente già registrato");
+>>>>>>> preRelease
         return navigate("/login");
       } else {
         setMessage(result.message);
         notificaErrore("Utente già registrato");
         navigate("/login");
       }
+<<<<<<< HEAD
     } catch {
       return setMessage("errore catch");
+=======
+      setSuccess(true);
+      notificaSuccesso("Registrazione avvenuta con successo"),
+        navigate("/login");
+>>>>>>> preRelease
     }
   }
   // Questa è la funzione che si attiverà al submit del form

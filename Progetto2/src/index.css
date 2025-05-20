@@ -1,3 +1,13 @@
+.container-img-artwork {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  row-gap: 3px;
+}
+.img-artwork {
+  height: 150px;
+  width: 150px;
+}
 /* start form carrello*/
 
 .form-carrello {
@@ -10,6 +20,7 @@
   border-radius: 20px;
   /* position: relative; */
   box-shadow: 2px 2px 15px #9d0a0e;
+  align-items: center;
 }
 
 .title-carrello {
@@ -69,6 +80,7 @@
   width: 100%;
   gap: 6px;
   flex-direction: column;
+  align-items: center;
 }
 
 .form label {
@@ -253,6 +265,7 @@
   color: #f2f2f2;
   font-weight: bold;
   transition: 0.2s;
+  cursor: pointer;
 }
 
 .normal-signin:hover {
@@ -1103,7 +1116,7 @@ footer {
 }
 #artwork {
   width: 300px;
-  height: 300px;
+  /* height: 300px; */
 }
 #licenza {
   width: 300px;

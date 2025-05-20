@@ -1,6 +1,7 @@
 import { useAuth } from "../Context/authContext";
 import { useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
+import { notificaSuccesso } from "../Notifiche/Notifiche";
 export default function NavBarDash() {
   const { logout } = useAuth();
   const navigate = useNavigate();
@@ -16,8 +17,7 @@ export default function NavBarDash() {
   function handleLogout() {
     logout();
     navigate("/login");
-    const notifica = () => toast("Effettuato Logout!");
-    notifica();
+    notificaSuccesso("Effettuato Logout!");
   }
 
   function handleCarrello() {

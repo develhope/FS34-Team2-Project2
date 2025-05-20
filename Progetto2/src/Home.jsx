@@ -1,4 +1,3 @@
-import Bestiario from "./Components/Bestiario";
 import Descrizione from "./Components/Descrizione";
 import Footer from "./Components/Footer";
 import HeroSection from "./Components/HeroSection";
@@ -13,7 +12,6 @@ export default function Home() {
         <div className="centro">
           <div className="main">
             <Descrizione />
-            <Bestiario></Bestiario>
             <Negozio></Negozio>
           </div>
         </div>

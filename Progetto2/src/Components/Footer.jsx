@@ -193,11 +193,39 @@ export default function Footer() {
                 </div>
 
                 <div id="artwork">
-                  <h6 className="cnt">Artwork</h6>
-                  <img src="assets/logo-gioco.png" alt="foto" /> <br />
-                  <img src="assets/logo-gioco.png" alt="foto" /> <br />
-                  <img src="assets/logo-gioco.png" alt="foto" /> <br />
-                  <img src="assets/logo-gioco.png" alt="foto" />
+                  <div className="title-artwork">
+                    <h6 className="cnt">Artwork</h6>
+                  </div>
+                  <div className="container-img-artwork">
+                    <div className="container-img-artwork-1">
+                      <img
+                        className="img-artwork"
+                        src="/src/assets/hero-img-cut.png"
+                        alt="foto"
+                      />{" "}
+                    </div>
+                    <div className="container-img-artwork-2">
+                      <img
+                        className="img-artwork"
+                        src="/src/assets/descrizione-gioco.jpeg"
+                        alt="foto"
+                      />{" "}
+                    </div>
+                    <div className="container-img-artwork-3">
+                      <img
+                        className="img-artwork"
+                        src="/src/assets/footer-background.jpeg"
+                        alt="foto"
+                      />{" "}
+                    </div>
+                    <div className="container-img-artwork-4">
+                      <img
+                        className="img-artwork"
+                        src="/src/assets/logo-gioco.png"
+                        alt="foto"
+                      />
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>
