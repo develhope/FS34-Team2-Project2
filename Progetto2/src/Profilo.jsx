@@ -53,7 +53,13 @@ export default function Profilo() {
             <p>
               <strong>Email: </strong> {user.email}
             </p>
-            <button onClick={handleDelete}>Cancella dati utente</button>
+            <button
+              className="normal-signin"
+              style={{ fontSize: 15 }}
+              onClick={handleDelete}
+            >
+              Cancella dati utente
+            </button>
           </div>
         </div>
         ;

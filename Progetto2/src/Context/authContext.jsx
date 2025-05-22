@@ -31,7 +31,15 @@ export default function AuthProvider({ children }) {
         notificaSuccesso("Login effettuato con successo!");
         setMessage(result.message);
         setUser(result.user);
-        localStorage.setItem("user", JSON.stringify(result.user)); // <-- aggiunto
+        localStorage.setItem(
+          "user",
+          JSON.stringify({
+            nome: result.user.nome,
+            cognome: result.user.cognome,
+            email: result.user.email,
+            id: result.user.id,
+          })
+        ); // <-- aggiunto
         return result.user;
       } else {
         notificaErrore("Credenziali errate");

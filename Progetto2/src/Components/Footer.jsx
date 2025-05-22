@@ -240,7 +240,9 @@ export default function Footer() {
                     strumenti di gestione delle campagne.
                     <br /> Endpoint base:
                     <br />
-                    <a href="#">https://api.lecronachedelligrall.com/v1</a>
+                    <a href="#" style={{ color: "white" }}>
+                      https://api.lecronachedelligrall.com/v1
+                    </a>
                   </p>
                 </div>
 

@@ -5,17 +5,13 @@ import { ToastContainer, toast } from "react-toastify";
 import { notificaSuccesso, notificaErrore } from "./Notifiche/Notifiche";
 
 export default function Registrazione() {
+  const { validate } = useAuth();
   const [message, setMessage] = useState();
   const [user, setUser] = useState({
     id: Date.now(),
   });
 
   const navigate = useNavigate();
-
-  const notifica3 = () =>
-    toast(
-      "La password deve contenere almeno 8 caratteri una lettera maiuscola e un numero speciale"
-    );
 
   // Questa funzione si attiva ogni volta che l’utente scrive qualcosa in un input
   // Aggiorna dinamicamente lo stato dell’utente (basandosi sul nome del campo)
@@ -29,6 +25,12 @@ export default function Registrazione() {
   async function handleSubmit(event) {
     event.preventDefault();
     try {
+      const verificaPsw = validate(user.password);
+      if (!verificaPsw) {
+        return notificaErrore(
+          "La password deve contenere almeno 8 caratteri una lettera maiuscola e un numero speciale"
+        );
+      }
       const response = await fetch("http://localhost:3000/utenti", {
         method: "POST",
         headers: { "Content-type": "application/json" },

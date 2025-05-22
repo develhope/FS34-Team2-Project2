@@ -44,6 +44,7 @@ export default function Carrello() {
   const [ordine, setOrdine] = useState(
     user
       ? {
+          idUser: user.id,
           id: Date.now(),
           nome: user.nome,
           cognome: user.cognome,
