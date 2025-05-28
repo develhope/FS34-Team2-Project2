@@ -69,7 +69,7 @@ export default function AuthProvider({ children }) {
 
   // Qui forniamo tutti i dati e le funzioni utili a chiunque userà useAuth() nella propria componente
   return (
-    <AuthContext.Provider value={{ user, login, logout, validate }}>
+    <AuthContext.Provider value={{ user, setUser, login, logout, validate }}>
       {children}
     </AuthContext.Provider>
   );

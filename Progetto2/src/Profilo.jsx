@@ -5,10 +5,10 @@ import { notificaErrore, notificaSuccesso } from "./Notifiche/Notifiche";
 import { useNavigate } from "react-router-dom";
 
 export default function Profilo() {
-  const { user } = useAuth();
+  const { user, setUser } = useAuth();
   const navigazione = useNavigate();
 
-  async function handleDelete(event) {
+  async function handleDelete() {
     if (confirm("Sei sicuro di eliminare il tuo account? ")) {
       try {
         const response = await fetch(
@@ -21,8 +21,9 @@ export default function Profilo() {
         if (response.ok) {
           console.log("utente cancellato con successo");
           localStorage.removeItem("user");
+          setUser(null);
           notificaSuccesso("Account eliminato con successo!");
-          navigazione("/");
+          navigazione("/login");
         } else {
           console.log("Utente non trovato");
         }
@@ -62,7 +63,6 @@ export default function Profilo() {
             </button>
           </div>
         </div>
-        ;
         <div id="back-home">
           <a id="back-home" href="/dashboard">
             Ritorna alla Dashboard
