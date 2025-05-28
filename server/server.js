@@ -66,9 +66,11 @@ app.post("/utenti", async (req, res) => {
       `,
       [nome, cognome, email, passwordCryptata]
     );
-    return res.status(201).json({ message: "utente registrato con successo" });
+    return res
+      .status(201)
+      .json({ ok: true, message: "utente registrato con successo" });
   } catch (error) {
-    return res.status(400).json({ message: error.message });
+    return res.status(400).json({ ok: false, message: error.message });
   }
 });
 
@@ -109,12 +111,10 @@ app.post("/utenti/login", async (req, res) => {
         const hashedPassword = userExist.password;
         const isTrue = await bcrypt.compare(password, hashedPassword);
         if (isTrue) {
-          return res
-            .status(200)
-            .json({
-              message: "login effettuato con successo",
-              user: userExist,
-            });
+          return res.status(200).json({
+            message: "login effettuato con successo",
+            user: userExist,
+          });
         } else {
           return res.status(400).json({ message: "credenziali errate" });
         }
