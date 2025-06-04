@@ -10,8 +10,8 @@ const app = express();
 const PORT = 3000;
 const salto = 10;
 
-app.use(express.json()); // middleware
-app.use(cors()); // middleware
+app.use(express.json());
+app.use(cors());
 
 //// 1 GetAll
 
