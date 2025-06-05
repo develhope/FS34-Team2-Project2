@@ -57,7 +57,6 @@ export default function NavBar() {
             <div className="menu-dropdown">
               <a href="#">Torna su</a>
               <a href="#gioco">Panoramica gioco</a>
-              <a href="#n-gioco">Bestiario</a>
               <a href="#cardContainer">Negozio accessori </a>
               <a href="#contatti">Contatti </a>
             </div>

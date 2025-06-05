@@ -906,6 +906,7 @@ header p {
 .corpo {
   background-color: #f1f1f1;
 }
+
 .main {
   display: flex;
   flex-direction: column;
@@ -919,7 +920,6 @@ header p {
   background-size: cover;
   border: #9d0a0e solid 5px;
   border-radius: 10px;
-  /* height: 500px; */
   margin-top: 20px;
   padding: 35px;
 }
@@ -1311,16 +1311,7 @@ footer {
     box-shadow: #9d0a0e 0px 5px 15px;
   }
 }
-@media (max-width: 727px) {
-  .corpo {
-    margin-top: 149px;
-  }
-}
-@media (max-width: 565px) {
-  .corpo {
-    margin-top: 202px;
-  }
-}
+
 @media (max-width: 530px) {
   header {
     display: flex;
@@ -1364,9 +1355,6 @@ footer {
   }
 }
 @media (max-width: 426px) {
-  .corpo {
-    margin-top: 257px;
-  }
   .prova1 {
     display: flex;
     gap: 20px;
@@ -1381,4 +1369,13 @@ footer {
 input[type="checkbox"] {
   width: 30px;
   height: 30px;
+}
+
+@media (max-width: 500px) {
+  .main {
+    width: 98%;
+  }
+  .gioco {
+    padding: 0;
+  }
 }
